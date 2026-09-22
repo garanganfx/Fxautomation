@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.quant-grid-bg{background-color:#080b11;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:32px 32px;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error-container":"#ffdad6","tertiary-container":"#8ab0ff","error":"#ffb4ab","surface-container-low":"#181b25","on-primary-fixed-variant":"#653e00","on-secondary-container":"#006b41","on-error":"#690005","surface-bright":"#353943","on-background":"#dfe2ef","secondary":"#cfffdd","inverse-primary":"#855300","surface-container-lowest":"#0a0e17","outline-variant":"#534434","primary-fixed-dim":"#ffb95f","background":"#0f131c","surface-dim":"#0f131c","surface-variant":"#31353f","secondary-fixed-dim":"#00e38f","outline":"#a08e7a","inverse-surface":"#dfe2ef","on-surface":"#dfe2ef","on-secondary-fixed":"#002111","tertiary":"#b6ccff","on-primary":"#472a00","surface-container-highest":"#31353f","primary-container":"#f59e0b","secondary-container":"#03f59b","on-tertiary-container":"#00408f","on-tertiary-fixed":"#001a42","on-primary-fixed":"#2a1700","surface-tint":"#ffb95f","on-secondary":"#003920","primary-fixed":"#ffddb8","error-container":"#93000a","surface-container":"#1c1f29","tertiary-fixed":"#d8e2ff","on-primary-container":"#613b00","tertiary-fixed-dim":"#adc6ff","surface":"#0f131c","surface-container-high":"#262a34","on-tertiary-fixed-variant":"#004395","secondary-fixed":"#53ffab","on-secondary-fixed-variant":"#005231","on-surface-variant":"#d8c3ad","inverse-on-surface":"#2c303a","on-tertiary":"#002e6a","primary":"#ffc174"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-desktop":"1.5rem","space-sm":"0.5rem","gutter-desktop":"1rem","gutter":"0.75rem","space-lg":"1rem","space-xs":"0.25rem","margin":"0.75rem","space-xl":"1.5rem","space-md":"0.75rem","space-2xl":"2rem"},"fontFamily":{"display-lg":["Space Grotesk"],"headline-md":["Space Grotesk"],"metric-lg":["JetBrains Mono"],"headline-lg":["Space Grotesk"],"headline-sm":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"code-telemetry":["JetBrains Mono"],"metric-xl":["JetBrains Mono"],"body-lg":["JetBrains Mono"],"body-md":["JetBrains Mono"],"label-caps":["JetBrains Mono"],"body-sm":["JetBrains Mono"]},"fontSize":{"display-lg":["48px",{"lineHeight":"52px","letterSpacing":"-0.04em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"metric-lg":["24px",{"lineHeight":"28px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"code-telemetry":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"400"}],"metric-xl":["36px",{"lineHeight":"40px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-lg":["14px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-md":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"400"}],"label-caps":["10px",{"lineHeight":"12px","letterSpacing":"0.08em","fontWeight":"500"}],"body-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"400"}]}}}};</script></head><body class="quant-grid-bg font-body-md text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-md border-b border-outline-variant/30 flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="w-2.5 h-2.5 bg-primary"></span><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">TERMINAL</span></div><span class="font-code-telemetry text-code-telemetry bg-surface-container-high px-1 text-primary">PRO</span></div><nav class="p-space-xs flex flex-col gap-1" data-active-classes="bg-surface-container text-primary border-l-2 border-primary font-semibold"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 transition-all uppercase bg-surface-container text-primary border-l-2 border-primary font-semibold" data-path="member-portal" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span>Portal Overview</a><a class="flex items-center gap-space-sm px-space-sm py-2 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-caps text-label-caps uppercase" data-path="expert-advisors" href="#"><span class="material-symbols-outlined text-[18px]">smart_toy</span>Active EAs</a><a class="flex items-center gap-space-sm px-space-sm py-2 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-caps text-label-caps uppercase" data-path="performance" href="#"><span class="material-symbols-outlined text-[18px]">query_stats</span>Performance Telemetry</a><a class="flex items-center gap-space-sm px-space-sm py-2 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-caps text-label-caps uppercase" data-path="backtest" href="#"><span class="material-symbols-outlined text-[18px]">history_toggle_off</span>Execution Backtest</a><a class="flex items-center gap-space-sm px-space-sm py-2 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-caps text-label-caps uppercase" data-path="risk-tools" href="#"><span class="material-symbols-outlined text-[18px]">shield</span>Risk Matrix</a></nav></div><div class="p-space-md border-t border-outline-variant/30 bg-surface-container-low/40"><div class="flex items-center justify-between font-code-telemetry text-code-telemetry mb-space-xs"><span class="text-on-surface-variant">SERVER STATUS</span><span class="text-secondary-fixed-dim">OPTIMAL</span></div><div class="w-full bg-surface-container-high h-1"><div class="bg-secondary-fixed-dim h-full w-[94%]"></div></div><div class="mt-space-xs font-code-telemetry text-code-telemetry text-outline">MT5 BRIDGE: SYNCED</div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md font-code-telemetry text-code-telemetry"><img alt="NEXUS FX ALGO Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VssqEEKY4bXRaaFfsjsfnBGMwGP0-Gx9e4UGsQRcRGWOC8I-0_W-smRahRUg69XgdedOoCSEjFznJgLk2Ihwlba2_or9pqwquaU9T3dh-ahJ9fGZjQbckJdE21r1rgEWul1ch9ZXkmwXCrA_Yj7LYh19Dwp8KQwu9jCGnuIQrK489TlutgjI7dEfM5xl0nvmUt1RWf6J6YJUmA_NVjKvG_DzC5Qrkt4eJhfiF0-I6R6OByTk587-v_P3s"/><div class="hidden md:flex items-center gap-space-sm border-l border-outline-variant/40 pl-space-md"><span class="text-on-surface-variant">EURUSD: <strong class="text-secondary-fixed-dim">+0.32%</strong></span><span class="text-outline-variant">/</span><span class="text-on-surface-variant">XAUUSD: <strong class="text-secondary-fixed-dim">+1.28%</strong></span><span class="text-outline-variant">/</span><span class="text-on-surface-variant">GBPUSD: <strong class="text-error">-0.15%</strong></span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-low border border-outline-variant/40 p-0.5"><button class="px-space-xs py-0.5 font-label-caps text-label-caps bg-surface-container text-primary uppercase">EN</button><button class="px-space-xs py-0.5 font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface uppercase">ID</button></div><div class="flex items-center gap-space-sm bg-surface-container-low border border-outline-variant/40 px-space-md py-1"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><div class="text-left"><div class="font-label-caps text-label-caps text-on-surface">HERU</div><div class="font-code-telemetry text-code-telemetry text-primary">PRO TRADER</div></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full"><div class="flex flex-col w-full">
+<div class="p-space-md lg:p-space-xl flex flex-col gap-space-xl">
+<!-- SECTION 1: Greeting & Telemetry Control Bar -->
+<div class="bg-surface-container-low p-space-lg flex flex-col gap-space-lg shadow-xl relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-block w-2 h-2 bg-secondary-container animate-pulse"></span>
+<span class="font-code-telemetry text-code-telemetry uppercase text-secondary-fixed-dim tracking-widest">ENCRYPTED QUANTUM TUNNEL // AUTH: VALIDATED</span>
+</div>
+<div class="flex items-baseline gap-space-sm flex-wrap">
+<h1 class="font-display-lg text-headline-lg lg:text-display-lg text-on-surface uppercase tracking-tight">WELCOME, HERU</h1>
+<span class="font-label-caps text-label-caps px-2 py-0.5 bg-primary-container text-on-primary-container font-bold tracking-wider">PRO MEMBER [VIP ACCESS]</span>
+</div>
+</div>
+<!-- Fast Telemetry Modules -->
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-space-xs bg-surface-container-lowest p-space-xs font-code-telemetry text-code-telemetry">
+<div class="flex flex-col p-space-xs bg-surface-container-low">
+<span class="text-on-surface-variant uppercase text-[9px]">Active EAs</span>
+<span class="font-metric-lg text-headline-sm text-primary font-bold">03</span>
+</div>
+<div class="flex flex-col p-space-xs bg-surface-container-low">
+<span class="text-on-surface-variant uppercase text-[9px]">License Keys</span>
+<span class="font-metric-lg text-headline-sm text-secondary-fixed-dim font-bold">04</span>
+</div>
+<div class="flex flex-col p-space-xs bg-surface-container-low">
+<span class="text-on-surface-variant uppercase text-[9px]">Expired / Revoked</span>
+<span class="font-metric-lg text-headline-sm text-on-surface-variant font-bold">00</span>
+</div>
+<div class="flex flex-col p-space-xs bg-surface-container-low">
+<span class="text-on-surface-variant uppercase text-[9px]">VPS Ping Latency</span>
+<span class="font-metric-lg text-headline-sm text-secondary-container font-bold flex items-center gap-1">
+              1.2<span class="text-code-telemetry">ms</span>
+</span>
+</div>
+<div class="flex flex-col p-space-xs bg-surface-container-low col-span-2 sm:col-span-1">
+<span class="text-on-surface-variant uppercase text-[9px]">Server Sync</span>
+<span class="font-metric-lg text-headline-sm text-secondary-fixed-dim font-bold uppercase">SYNCED</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Operations Bar -->
+<div class="flex items-center gap-space-xs flex-wrap pt-space-xs">
+<button class="bg-primary text-on-primary hover:bg-primary-fixed-dim px-space-md py-2 font-label-caps text-label-caps uppercase font-bold flex items-center gap-space-xs shadow-md transition-transform active:translate-y-0.5" id="btn-bind-modal">
+<span class="material-symbols-outlined text-[16px]">add_link</span>
+          Bind New Account MT4/MT5
+        </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-2 font-label-caps text-label-caps uppercase font-semibold flex items-center gap-space-xs shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">folder_zip</span>
+          Download All Presets (.set)
+        </button>
+<a class="bg-surface-container hover:bg-surface-container-high text-tertiary-container px-space-md py-2 font-label-caps text-label-caps uppercase font-semibold flex items-center gap-space-xs shadow-sm transition-colors" href="https://t.me" target="_blank">
+<span class="material-symbols-outlined text-[16px]">podcasts</span>
+          Join VIP Telegram Signals
+        </a>
+<a class="bg-surface-container hover:bg-surface-container-high text-primary-fixed-dim px-space-md py-2 font-label-caps text-label-caps uppercase font-semibold flex items-center gap-space-xs shadow-sm transition-colors" href="#support">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+          Contact Priority Support
+        </a>
+</div>
+</div>
+<!-- UPDATE NOTIFICATION SCRIM BANNER -->
+<div class="bg-surface-container p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm shadow-md relative">
+<div class="flex items-center gap-space-md">
+<div class="p-2 bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps bg-primary text-on-primary px-1.5 uppercase font-bold">New Release</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">EA XAUUSD v2.5 Protocol Available</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Enhanced Gold NFP spread filter matrix &amp; adaptive slippage neutralization algorithm activated.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-auto">
+<button class="bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed px-space-md py-1.5 font-label-caps text-label-caps uppercase font-bold flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+          Download Update
+        </button>
+</div>
+</div>
+<!-- SECTION 2 & 6: Split Telemetry: Performance Metrics & Real-time Live Node -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Performance Monitoring Widget (Real Account Node) -->
+<div class="lg:col-span-8 bg-surface-container-low p-space-lg shadow-xl flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 bg-secondary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase font-bold tracking-wider">LIVE EXECUTION FEED: HERU LIVE IC MARKETS</span>
+</div>
+<span class="font-code-telemetry text-code-telemetry text-on-surface-variant bg-surface-container-lowest px-2 py-0.5">AC: #8892104 // RAW SPREAD ECN</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md py-space-sm">
+<div class="bg-surface-container p-space-md flex flex-col gap-1">
+<span class="font-code-telemetry text-code-telemetry text-on-surface-variant uppercase">Current Net Balance</span>
+<span class="font-metric-xl text-metric-xl text-on-surface tracking-tight">$14,280.42</span>
+<div class="flex items-center gap-1 text-secondary-fixed-dim font-code-telemetry text-code-telemetry">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+$4,280.00 (+42.8%) Net</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-md flex flex-col gap-1">
+<span class="font-code-telemetry text-code-telemetry text-on-surface-variant uppercase">Algorithmic Win Rate</span>
+<span class="font-metric-xl text-metric-xl text-secondary-container tracking-tight">76.4%</span>
+<div class="flex items-center gap-1 text-on-surface-variant font-code-telemetry text-code-telemetry">
+<span>Sample: 412 Order Batches</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-md flex flex-col gap-1">
+<span class="font-code-telemetry text-code-telemetry text-on-surface-variant uppercase">Max Calculated DD</span>
+<span class="font-metric-xl text-metric-xl text-primary tracking-tight">3.82%</span>
+<div class="flex items-center gap-1 text-on-surface-variant font-code-telemetry text-code-telemetry">
+<span>Risk Ceiling: 5.00%</span>
+</div>
+</div>
+</div>
+<!-- Data Visualization Sparkline & Terminal Stats -->
+<div class="pt-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-code-telemetry text-code-telemetry text-on-surface-variant">
+<span>EQUITY MOMENTUM CURVE (30D TICK TELEMETRY)</span>
+<span class="text-secondary-fixed-dim">PROFIT FACTOR: 2.84</span>
+</div>
+<div class="w-full h-20 bg-surface-container-lowest p-2 flex items-end">
+<svg class="w-full h-full text-secondary-container" fill="none" preserveaspectratio="none" viewbox="0 0 500 80">
+<path d="M0,70 L25,65 L50,68 L75,60 L100,55 L125,58 L150,45 L175,50 L200,42 L225,38 L250,40 L275,30 L300,28 L325,32 L350,22 L375,18 L400,20 L425,12 L450,15 L475,8 L500,4" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0,70 L25,65 L50,68 L75,60 L100,55 L125,58 L150,45 L175,50 L200,42 L225,38 L250,40 L275,30 L300,28 L325,32 L350,22 L375,18 L400,20 L425,12 L450,15 L475,8 L500,4 L500,80 L0,80 Z" fill="currentColor" fill-opacity="0.08"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Live Machine Telemetry Status -->
+<div class="lg:col-span-4 bg-surface-container-low p-space-lg shadow-xl flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider">SECURE NODE INTEGRITY</span>
+<span class="font-code-telemetry text-code-telemetry text-secondary-fixed-dim">LIVE BRIDGE</span>
+</div>
+<div class="flex flex-col gap-space-sm font-code-telemetry text-code-telemetry">
+<div class="bg-surface-container-lowest p-space-sm flex justify-between items-center">
+<span class="text-on-surface-variant">HOST LOCATION:</span>
+<span class="text-on-surface font-semibold">Equinix NY4 (Secaucus)</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm flex justify-between items-center">
+<span class="text-on-surface-variant">BRIDGE LATENCY:</span>
+<span class="text-secondary-fixed-dim font-bold">1.2ms [TICK SYNCED]</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm flex justify-between items-center">
+<span class="text-on-surface-variant">SERVER MEMORY:</span>
+<span class="text-on-surface">1.8GB / 8GB ALLOCATED</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm flex justify-between items-center">
+<span class="text-on-surface-variant">SECURITY TOKEN:</span>
+<span class="text-primary truncate ml-2">SHA256:7e91...d11c</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[18px]">verified_user</span>
+<span class="font-body-sm text-body-sm text-on-surface">Zero Execution Divergence Confirmed across all active nodes.</span>
+</div>
+</div>
+</div>
+<!-- SECTION 3: My Licenses Management Table -->
+<div class="bg-surface-container-low shadow-xl flex flex-col">
+<div class="p-space-md bg-surface-container flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 bg-primary"></span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">ACTIVE SYSTEM LICENSES &amp; TERMINAL BINDS</h2>
+</div>
+<div class="font-code-telemetry text-code-telemetry text-on-surface-variant bg-surface-container-lowest px-2 py-1">
+          RESERVATION POOL: 4 / 5 SLOTS FILLED
+        </div>
+</div>
+<!-- Security Hardware Alert Strip -->
+<div class="bg-surface-container-high px-space-md py-2 flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">lock_reset</span>
+<span class="font-code-telemetry text-code-telemetry text-on-surface">
+          VERIFIED SYSTEM NOTE: Anti-copy hardware ID linked to VPS MT5 Terminal #8892104. Modifying binds triggers automated hash invalidation.
+        </span>
+</div>
+<!-- Table Wrapper -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-code-telemetry text-body-sm">
+<thead class="bg-surface-container-lowest text-on-surface-variant uppercase text-[10px] tracking-wider select-none">
+<tr>
+<th class="py-3 px-space-md">EA Protocol &amp; Version</th>
+<th class="py-3 px-space-md">License Key Matrix</th>
+<th class="py-3 px-space-md">Host Architecture</th>
+<th class="py-3 px-space-md">Bound Terminal Account</th>
+<th class="py-3 px-space-md">Status Flag</th>
+<th class="py-3 px-space-md">Lifecycle Horizon</th>
+<th class="py-3 px-space-md text-right">Node Operations</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary-container"></span>
+                EA XAUUSD Pro <span class="text-primary text-[10px]">v2.4.1</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-metric-lg text-body-md text-on-surface-variant tracking-wider">NX-8821-****-9014-XAU</span>
+<button class="hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('NX-8821-4912-9014-XAU')" title="Copy Key">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="bg-surface-container-highest px-2 py-0.5 text-on-surface font-label-caps text-label-caps">MT5 ECN</span>
+</td>
+<td class="py-3 px-space-md text-on-surface">
+<div class="flex flex-col">
+<span class="text-primary font-bold">#8892104</span>
+<span class="text-on-surface-variant text-[10px]">IC Markets (Real)</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-secondary-container/10 text-secondary-fixed-dim text-label-caps font-label-caps font-bold">
+<span class="w-1.5 h-1.5 bg-secondary-container rounded-full animate-ping"></span> ACTIVE (BOUND)
+                </span>
+</td>
+<td class="py-3 px-space-md text-on-surface-variant font-medium">LIFETIME ACCESS</td>
+<td class="py-3 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-bright text-on-surface text-[10px] font-label-caps uppercase transition-colors">Modify Bind</button>
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-bright text-primary text-[10px] font-label-caps uppercase transition-colors">Regen</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary-container"></span>
+                EA Scalper Pro <span class="text-primary text-[10px]">v1.9</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-metric-lg text-body-md text-on-surface-variant tracking-wider">NX-3310-****-7721-SCL</span>
+<button class="hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('NX-3310-9118-7721-SCL')" title="Copy Key">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="bg-surface-container-highest px-2 py-0.5 text-on-surface font-label-caps text-label-caps">MT4 STD</span>
+</td>
+<td class="py-3 px-space-md text-on-surface">
+<div class="flex flex-col">
+<span class="text-primary font-bold">#4410923</span>
+<span class="text-on-surface-variant text-[10px]">Pepperstone ECN</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-primary-container/20 text-primary-fixed-dim text-label-caps font-label-caps font-bold">
+<span class="w-1.5 h-1.5 bg-primary-container"></span> EXPIRING (12 DAYS)
+                </span>
+</td>
+<td class="py-3 px-space-md text-primary font-semibold">14 NOV 2025</td>
+<td class="py-3 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2 py-1 bg-primary text-on-primary hover:bg-primary-fixed-dim text-[10px] font-label-caps uppercase font-bold transition-colors">Renew</button>
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-bright text-on-surface text-[10px] font-label-caps uppercase transition-colors">Modify</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary-container"></span>
+                EA Titan SMC <span class="text-primary text-[10px]">v3.0</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-metric-lg text-body-md text-on-surface-variant tracking-wider">NX-9904-****-1002-SMC</span>
+<button class="hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('NX-9904-5112-1002-SMC')" title="Copy Key">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="bg-surface-container-highest px-2 py-0.5 text-on-surface font-label-caps text-label-caps">MT5 RAW</span>
+</td>
+<td class="py-3 px-space-md text-on-surface">
+<div class="flex flex-col">
+<span class="text-primary font-bold">#9091823</span>
+<span class="text-on-surface-variant text-[10px]">FTMO Prop 100K</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-secondary-container/10 text-secondary-fixed-dim text-label-caps font-label-caps font-bold">
+<span class="w-1.5 h-1.5 bg-secondary-container"></span> ACTIVE (BOUND)
+                </span>
+</td>
+<td class="py-3 px-space-md text-on-surface-variant font-medium">LIFETIME ACCESS</td>
+<td class="py-3 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-bright text-on-surface text-[10px] font-label-caps uppercase transition-colors">Modify Bind</button>
+<button class="px-2 py-1 bg-surface-container hover:bg-error/20 hover:text-error text-[10px] font-label-caps uppercase transition-colors">Deactivate</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-outline-variant"></span>
+                EA Grid Matrix <span class="text-on-surface-variant text-[10px]">v1.2</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-metric-lg text-body-md text-on-surface-variant tracking-wider">NX-1049-****-6632-GRD</span>
+<button class="hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('NX-1049-3329-6632-GRD')" title="Copy Key">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="bg-surface-container-highest px-2 py-0.5 text-on-surface font-label-caps text-label-caps">MT4 DEMO</span>
+</td>
+<td class="py-3 px-space-md text-on-surface">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-bold">UNBOUND</span>
+<span class="text-on-surface-variant text-[10px]">Ready to bind</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-surface-container text-on-surface-variant text-label-caps font-label-caps font-bold">
+                  UNBOUND READY
+                </span>
+</td>
+<td class="py-3 px-space-md text-on-surface-variant font-medium">LIFETIME ACCESS</td>
+<td class="py-3 px-space-md text-right">
+<button class="px-2 py-1 bg-primary text-on-primary hover:bg-primary-fixed-dim text-[10px] font-label-caps uppercase font-bold transition-colors">Bind Terminal</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- SECTION 4: Active EAs Download Center -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 bg-secondary-container"></span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">MY AUTHORIZED EA PROTOCOLS &amp; BINARIES</h2>
+</div>
+<span class="font-code-telemetry text-code-telemetry text-on-surface-variant">CHECKSUM SIGNED // MQL-SECURE</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- EA 1: EA XAUUSD Pro -->
+<div class="bg-surface-container-low p-space-lg shadow-xl flex flex-col justify-between gap-space-md relative overflow-hidden">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">PRECIOUS METALS CORE</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">EA XAUUSD PRO v2.4.1</h3>
+</div>
+<span class="px-2 py-0.5 bg-secondary-container/10 text-secondary-container font-label-caps text-label-caps uppercase font-bold">VIP ACTIVE</span>
+</div>
+<div class="bg-surface-container-highest/50 p-space-xs font-code-telemetry text-code-telemetry text-on-surface-variant">
+              CHANGELOG: Improved NFP News Filter &amp; tighter dynamic trailing stop activation.
+            </div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs font-code-telemetry text-code-telemetry py-space-xs">
+<div class="bg-surface-container p-space-xs">
+<span class="text-on-surface-variant block">PRIMARY PAIR:</span>
+<span class="text-on-surface font-bold">XAUUSD (GOLD)</span>
+</div>
+<div class="bg-surface-container p-space-xs">
+<span class="text-on-surface-variant block">TIMEFRAME:</span>
+<span class="text-on-surface font-bold">M15 EXECUTION</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="bg-primary hover:bg-primary-fixed-dim text-on-primary py-2 font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+                Download .EX5 (MT5)
+              </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface py-2 font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+                Download .EX4 (MT4)
+              </button>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface py-1.5 font-label-caps text-label-caps uppercase flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+                Preset Bundle (.SET)
+              </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface py-1.5 font-label-caps text-label-caps uppercase flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+                PDF Operation Manual
+              </button>
+</div>
+</div>
+</div>
+<!-- EA 2: EA Scalper Pro -->
+<div class="bg-surface-container-low p-space-lg shadow-xl flex flex-col justify-between gap-space-md relative overflow-hidden">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-secondary-fixed tracking-widest uppercase">HIGH FREQUENCY FX</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">EA SCALPER PRO v1.9</h3>
+</div>
+<span class="px-2 py-0.5 bg-secondary-container/10 text-secondary-container font-label-caps text-label-caps uppercase font-bold">VIP ACTIVE</span>
+</div>
+<div class="bg-surface-container-highest/50 p-space-xs font-code-telemetry text-code-telemetry text-on-surface-variant">
+              CHANGELOG: Asian session liquidity tap logic upgraded; optimized for raw spreads &lt;0.4 pips.
+            </div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs font-code-telemetry text-code-telemetry py-space-xs">
+<div class="bg-surface-container p-space-xs">
+<span class="text-on-surface-variant block">PAIRS:</span>
+<span class="text-on-surface font-bold">EURUSD, GBPUSD</span>
+</div>
+<div class="bg-surface-container p-space-xs">
+<span class="text-on-surface-variant block">TIMEFRAME:</span>
+<span class="text-on-surface font-bold">M1 / M5 TICK FLOW</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="bg-primary hover:bg-primary-fixed-dim text-on-primary py-2 font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+                Download .EX5 (MT5)
+              </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface py-2 font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+                Download .EX4 (MT4)
+              </button>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface py-1.5 font-label-caps text-label-caps uppercase flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+                Preset Bundle (.SET)
+              </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface py-1.5 font-label-caps text-label-caps uppercase flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+                PDF Operation Manual
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 5: Preset Manager (.SET files) -->
+<div class="bg-surface-container-low p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 bg-tertiary"></span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">CURATED INSTITUTIONAL PRESET MATRICES (.SET)</h2>
+</div>
+<span class="font-code-telemetry text-code-telemetry text-on-surface-variant">FORWARD TESTED ON RAW SPREAD 500ms</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Preset 1 -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-secondary-fixed uppercase font-bold">XAUUSD CONSERVATIVE</span>
+<span class="bg-surface-container-lowest px-1.5 py-0.5 text-on-surface font-code-telemetry text-[10px]">PROP FIRM SAFE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Recommended for funded evaluation challenges &amp; low risk threshold setups.</p>
+<div class="bg-surface-container-lowest p-space-xs font-code-telemetry text-code-telemetry flex flex-col gap-1 mt-space-xs">
+<div class="flex justify-between"><span class="text-on-surface-variant">RISK PER TRADE:</span><span class="text-on-surface">1.0% FIXED</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">MAX RECORDED DD:</span><span class="text-secondary-fixed-dim">4.8%</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">TAKE PROFIT:</span><span class="text-on-surface">45 PIPS</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">STOP LOSS:</span><span class="text-on-surface">25 PIPS</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">MARTINGALE:</span><span class="text-error font-bold">DISABLED</span></div>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed py-2 font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+            Download Conservative.set
+          </button>
+</div>
+<!-- Preset 2 -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">XAUUSD BALANCED</span>
+<span class="bg-surface-container-lowest px-1.5 py-0.5 text-on-surface font-code-telemetry text-[10px]">STANDARD GROWTH</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Engineered for personal real accounts seeking compound yield expansion.</p>
+<div class="bg-surface-container-lowest p-space-xs font-code-telemetry text-code-telemetry flex flex-col gap-1 mt-space-xs">
+<div class="flex justify-between"><span class="text-on-surface-variant">RISK PER TRADE:</span><span class="text-on-surface">2.0% DYNAMIC</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">MAX RECORDED DD:</span><span class="text-primary font-bold">8.2%</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">DYNAMIC RECOVERY:</span><span class="text-on-surface">OFF</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">TRAILING STOP:</span><span class="text-on-surface">STEP ACTIVATED</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">AVG MONTHLY:</span><span class="text-secondary-fixed-dim font-bold">+14.2%</span></div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary hover:bg-primary-fixed-dim py-2 font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+            Download Balanced.set
+          </button>
+</div>
+<!-- Preset 3 -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase font-bold">EURUSD MICRO SCALPER</span>
+<span class="bg-surface-container-lowest px-1.5 py-0.5 text-on-surface font-code-telemetry text-[10px]">ASIAN SESSION</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">High frequency mean-reversion designed strictly for tight spread windows.</p>
+<div class="bg-surface-container-lowest p-space-xs font-code-telemetry text-code-telemetry flex flex-col gap-1 mt-space-xs">
+<div class="flex justify-between"><span class="text-on-surface-variant">ACTIVE HOURS:</span><span class="text-on-surface">22:00 - 06:00 GMT</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">MAX PERMITTED SPREAD:</span><span class="text-secondary-fixed-dim">1.2 PIPS</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">AVG DURATION:</span><span class="text-on-surface">4.2 MIN / TRADE</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">STOP LOSS:</span><span class="text-on-surface">12 PIPS HARD</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">PROFIT TARGET:</span><span class="text-on-surface">15 PIPS</span></div>
+</div>
+</div>
+<button class="w-full bg-surface-container-high hover:bg-surface-bright text-on-surface py-2 font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+            Download AsianScalp.set
+          </button>
+</div>
+</div>
+</div>
+<!-- SECTION 6: 7-Step Interactive Installation Wizard Accordion -->
+<div class="bg-surface-container-low p-space-lg shadow-xl flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 bg-primary"></span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">DEPLOYMENT PROTOCOL: 7-STEP INSTALLATION ROADMAP</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Institutional MT4/MT5 setup blueprint. Follow steps sequentially to activate zero-latency autotrading.</p>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<a class="bg-surface-container hover:bg-surface-container-high text-primary px-space-md py-1.5 font-label-caps text-label-caps uppercase font-bold flex items-center gap-1 transition-colors" href="#video-guide">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+            Watch 5-Min Setup Video
+          </a>
+<a class="bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed px-space-md py-1.5 font-label-caps text-label-caps uppercase font-bold flex items-center gap-1 transition-colors" href="https://wa.me" target="_blank">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+            Need VPS Setup? WhatsApp Support
+          </a>
+</div>
+</div>
+<!-- Roadmap Accordion List -->
+<div class="flex flex-col gap-space-xs font-code-telemetry">
+<!-- Step 1 -->
+<details class="group bg-surface-container" open="">
+<summary class="cursor-pointer p-space-md flex items-center justify-between select-none hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="bg-primary text-on-primary font-bold text-label-caps px-2 py-0.5">STEP 01</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Acquire Compiled EA Binary (.ex4 / .ex5)</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="p-space-md pt-0 text-on-surface-variant font-body-sm flex flex-col gap-2">
+<p>Download the latest compiled executable file from your active licenses card above. Select <code class="text-primary bg-surface-container-lowest px-1">.ex4</code> for standard MetaTrader 4, or <code class="text-primary bg-surface-container-lowest px-1">.ex5</code> for high-throughput MetaTrader 5 multi-asset execution.</p>
+</div>
+</details>
+<!-- Step 2 -->
+<details class="group bg-surface-container">
+<summary class="cursor-pointer p-space-md flex items-center justify-between select-none hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="bg-surface-container-highest text-on-surface font-bold text-label-caps px-2 py-0.5">STEP 02</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Access MetaTrader Root Storage Terminal</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="p-space-md pt-0 text-on-surface-variant font-body-sm flex flex-col gap-2">
+<p>Launch your desktop MT4 / MT5 platform. In the top navigation menu, navigate to:</p>
+<div class="p-space-xs bg-surface-container-lowest text-secondary-fixed-dim">
+<code>File → Open Data Folder → MQL4 / MQL5 → Experts</code>
+</div>
+</div>
+</details>
+<!-- Step 3 -->
+<details class="group bg-surface-container">
+<summary class="cursor-pointer p-space-md flex items-center justify-between select-none hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="bg-surface-container-highest text-on-surface font-bold text-label-caps px-2 py-0.5">STEP 03</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Deploy Binary &amp; Refresh Navigator Tree</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="p-space-md pt-0 text-on-surface-variant font-body-sm flex flex-col gap-2">
+<p>Paste the downloaded binary file directly inside the <code class="text-primary bg-surface-container-lowest px-1">/Experts</code> directory. Return to MetaTrader, press <kbd class="bg-surface-container-highest px-1 text-on-surface">Ctrl+N</kbd> to open Navigator, right-click "Expert Advisors", and click <strong>Refresh</strong>.</p>
+</div>
+</details>
+<!-- Step 4 -->
+<details class="group bg-surface-container">
+<summary class="cursor-pointer p-space-md flex items-center justify-between select-none hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="bg-primary text-on-primary font-bold text-label-caps px-2 py-0.5">STEP 04</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Authenticate WebRequest &amp; License Validation Node</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="p-space-md pt-0 text-on-surface-variant font-body-sm flex flex-col gap-2">
+<p>Go to <code class="text-on-surface">Tools → Options → Expert Advisors</code>. Enable "Allow WebRequest for listed URL" and append the primary authentication gateway URL:</p>
+<div class="p-space-xs bg-surface-container-lowest flex items-center justify-between">
+<code class="text-primary font-bold">https://api.nexusfxalgo.com</code>
+<button class="text-on-surface-variant hover:text-primary" onclick="navigator.clipboard.writeText('https://api.nexusfxalgo.com')"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+</details>
+<!-- Step 5 -->
+<details class="group bg-surface-container">
+<summary class="cursor-pointer p-space-md flex items-center justify-between select-none hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="bg-surface-container-highest text-on-surface font-bold text-label-caps px-2 py-0.5">STEP 05</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Inject Institutional Risk Preset (.set)</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="p-space-md pt-0 text-on-surface-variant font-body-sm flex flex-col gap-2">
+<p>When loading the EA on your chart, click the <strong>Inputs</strong> tab, hit <strong>Load</strong>, and pick your preferred setting file (e.g., <code class="text-on-surface bg-surface-container-lowest px-1">XAUUSD_Conservative.set</code>). Ensure your license key is pasted into the <code class="text-on-surface bg-surface-container-lowest px-1">InpLicenseKey</code> variable.</p>
+</div>
+</details>
+<!-- Step 6 -->
+<details class="group bg-surface-container">
+<summary class="cursor-pointer p-space-md flex items-center justify-between select-none hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="bg-surface-container-highest text-on-surface font-bold text-label-caps px-2 py-0.5">STEP 06</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Attach EA to Verified Execution Chart</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="p-space-md pt-0 text-on-surface-variant font-body-sm flex flex-col gap-2">
+<p>Open a clean chart with the specified instrument (e.g. <strong>XAUUSD</strong> on <strong>M15 timeframe</strong>). Drag and drop the EA from Navigator onto the chart canvas.</p>
+</div>
+</details>
+<!-- Step 7 -->
+<details class="group bg-surface-container">
+<summary class="cursor-pointer p-space-md flex items-center justify-between select-none hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="bg-secondary-container text-on-secondary-container font-bold text-label-caps px-2 py-0.5">STEP 07</span>
+<span class="font-headline-sm text-headline-sm text-secondary-fixed">Engage 'Algo Trading' Engine (Green Icon)</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="p-space-md pt-0 text-on-surface-variant font-body-sm flex flex-col gap-2">
+<p>Ensure the top toolbar button marked <strong>Algo Trading</strong> or <strong>AutoTrading</strong> is engaged (Green Play Icon). A grinning emoji or green icon will populate the top right corner of your chart, confirming active algorithmic surveillance.</p>
+</div>
+</details>
+</div>
+</div>
+<!-- MODAL DIALOG: Bind New Account MT4/MT5 (Hidden by default, triggered by JS) -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-sm z-50 flex items-center justify-center p-space-md hidden" id="bind-modal">
+<div class="bg-surface-container p-space-lg w-full max-w-lg shadow-2xl flex flex-col gap-space-md relative">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase font-bold">BIND MT4/MT5 TRADING TERMINAL</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" id="close-modal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Binding an account registers your MT4/MT5 ID to your cryptographic license token. Hardware locks are permanent once confirmed.
+        </p>
+<form class="flex flex-col gap-space-md font-code-telemetry text-body-sm" onsubmit="event.preventDefault(); document.getElementById('bind-modal').classList.add('hidden');">
+<div class="flex flex-col gap-1">
+<label class="text-on-surface-variant text-[10px] uppercase font-bold">Target License Token</label>
+<select class="bg-surface-container-lowest p-space-xs text-on-surface focus:outline-none">
+<option>NX-8821-****-9014-XAU (EA XAUUSD Pro v2.4.1)</option>
+<option>NX-1049-****-6632-GRD (EA Grid Matrix v1.2)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-on-surface-variant text-[10px] uppercase font-bold">Platform Standard</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<label class="flex items-center gap-space-xs bg-surface-container-lowest p-space-xs cursor-pointer">
+<input checked="" class="accent-primary" name="platform" type="radio"/>
+<span>MetaTrader 5 (MT5)</span>
+</label>
+<label class="flex items-center gap-space-xs bg-surface-container-lowest p-space-xs cursor-pointer">
+<input class="accent-primary" name="platform" type="radio"/>
+<span>MetaTrader 4 (MT4)</span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-on-surface-variant text-[10px] uppercase font-bold">Broker &amp; Server Name</label>
+<input class="bg-surface-container-lowest p-space-xs text-on-surface focus:outline-none" placeholder="e.g. ICMarketsSC-Live02" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-on-surface-variant text-[10px] uppercase font-bold">Account Number (Login ID)</label>
+<input class="bg-surface-container-lowest p-space-xs text-on-surface focus:outline-none" placeholder="e.g. 8892104" type="text"/>
+</div>
+<div class="pt-space-xs flex justify-end gap-space-xs">
+<button class="px-space-md py-2 bg-surface-container-high text-on-surface font-label-caps text-label-caps uppercase" id="cancel-modal" type="button">Cancel</button>
+<button class="px-space-md py-2 bg-primary text-on-primary font-label-caps text-label-caps uppercase font-bold hover:bg-primary-fixed-dim" type="submit">Authorize Node Bind</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const bindBtn = document.getElementById('btn-bind-modal');
+    const modal = document.getElementById('bind-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const cancelBtn = document.getElementById('cancel-modal');
+
+    if (bindBtn && modal) {
+      bindBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+    }
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+    if (cancelBtn && modal) {
+      cancelBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+  })();
+</script></main></div></body></html>
